@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemie
+  - Bullet
+  - Skull
+  - Wall
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 2749536303
+    locked: 0
+  - name: Wall
+    uniqueID: 1271988757
+    locked: 0
+  - name: Decoration
+    uniqueID: 2203159839
+    locked: 0
+  - name: OnFloor
+    uniqueID: 812039291
+    locked: 0
+  - name: Enemy
+    uniqueID: 987648507
+    locked: 0
+  - name: Player
+    uniqueID: 1846120143
+    locked: 0
