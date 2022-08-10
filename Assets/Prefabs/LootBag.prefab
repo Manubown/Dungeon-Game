@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5344643188149557638}
   - component: {fileID: 1088409940705986040}
   - component: {fileID: 875857222713286777}
-  - component: {fileID: 6865099992777778648}
+  - component: {fileID: -310729927539801294}
   m_Layer: 0
   m_Name: LootBag
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.028613538}
   serializedVersion: 2
   m_Radius: 0.16804162
---- !u!114 &6865099992777778648
+--- !u!114 &-310729927539801294
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,6 +111,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8159622692384687059}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5056e502db2750749b2041796f7c7c73, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ad77ecd03f0452aa32946d5fad18da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refData: {fileID: 11400000, guid: d9b8b57275778d74ea67c4c916a9039b, type: 2}

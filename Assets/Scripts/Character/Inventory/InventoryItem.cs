@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class InventoryItem : MonoBehaviour
+public class InventoryItem
 {
     public Item data {get; private set;}
     public int stackSize {get; private set;}
