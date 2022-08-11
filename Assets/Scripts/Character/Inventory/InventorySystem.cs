@@ -27,7 +27,6 @@ public class InventorySystem : MonoBehaviour
     private void Update()
     {
         Inventory = PlayerInventory;
-        
     }
 
     public InventoryItem Get(Item refData)
@@ -36,24 +35,23 @@ public class InventorySystem : MonoBehaviour
         {
             return value;
         }
-
         return null;
     }
 
     public void Add(Item refData)
     {
-        Debug.Log("Added Item to Inv");
         if (PlayerItemDirectory.TryGetValue(refData, out InventoryItem value))
         {
             value.AddToStack();
         }
         else
         {
-            
             InventoryItem newItem = new InventoryItem(refData);
             PlayerInventory.Add((newItem));
             PlayerItemDirectory.Add(refData, newItem);
         }
+        
+        Debug.Log("Added: " + refData.Name+" to inventory");
     }
 
     public void Remove(Item refData)

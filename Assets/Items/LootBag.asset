@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LootBag
   m_EditorClassIdentifier: 
   id: 0
-  Name: BownSword
+  Name: LootBag
   icon: {fileID: -1916269438, guid: e1f460b68e3cdba469840c33ab214df5, type: 3}
   prefab: {fileID: 8159622692384687059, guid: 469058e33570f034c894eb09ac2d6726, type: 3}

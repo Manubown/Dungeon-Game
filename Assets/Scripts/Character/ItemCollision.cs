@@ -4,22 +4,18 @@
     using System.Collections.Generic;
     using UnityEngine;
     using System.Linq;
+    using UnityEngine.Serialization;
 
     public class ItemCollision : MonoBehaviour
     {
         public KeyCode ItemPickUpKey = KeyCode.F;
-        public List<GameObject> itemsInRange;
+        [FormerlySerializedAs("itemsInRange")] public GameObject itemInRange;
         
         private void Update()
         {
-            if (Input.GetKeyDown(ItemPickUpKey))
+            if (Input.GetKeyDown(ItemPickUpKey) && itemInRange != null)
             {
-                Debug.Log("PICK UP CLICK");
-                foreach (var item in itemsInRange)
-                {
-                    item.GetComponent<ItemObject>().HandlePickUpItem();
-                    Debug.Log("Picked UP");
-                }
+                itemInRange.GetComponent<ItemObject>().HandlePickUpItem();
             }
         }
         
@@ -27,19 +23,15 @@
         {
             if (collision.tag == "Item")
             {
-                Debug.Log("Item in Range");
-                itemsInRange.Add(collision.gameObject);
+                itemInRange = (collision.gameObject);
             }
-
         }
         
         private void OnTriggerExit2D(Collider2D collision)
         {
             if (collision.tag == "Item")
             {
-                Debug.Log("Item out of Range");
-                itemsInRange.Remove(collision.gameObject);
+                itemInRange = null;
             }
-            
         }
     }
