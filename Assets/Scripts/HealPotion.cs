@@ -16,11 +16,13 @@ public class HealPotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (lootAble && Input.GetKeyDown(KeyCode.F))
         {
             player.GetComponent<PlayerHealthsystem>().Heal(heal);
             Destroy(gameObject);
         }
+        */
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

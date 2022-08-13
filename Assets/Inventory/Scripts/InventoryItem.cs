@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
+[System.Serializable]
 public class InventoryItem
 {
-    public Item data {get; private set;}
-    public int stackSize {get; private set;}
+    public Item data;
+    public int stackSize;
 
     public InventoryItem(Item source){
         data = source;

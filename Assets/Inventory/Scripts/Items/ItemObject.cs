@@ -7,10 +7,5 @@ using UnityEngine.UIElements;
     {
         public Item refData;
 
-        public void HandlePickUpItem()
-        {
-            Debug.Log("Picked up: " + refData.Name);
-            InventorySystem.current.Add(refData);
-            Destroy(gameObject);
-        }
+        
     }

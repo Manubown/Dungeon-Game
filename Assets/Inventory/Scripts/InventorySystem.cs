@@ -5,40 +5,25 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 
-public class InventorySystem : MonoBehaviour
+[CreateAssetMenu(fileName = "NewInventory", menuName = "Inventory System/Inventory")]
+public class InventorySystem : ScriptableObject
 {
-    public GameObject InvSlot;
-    public GameObject ItemPref;
-    public static InventorySystem current;
-    public Dictionary<Item, InventoryItem> PlayerItemDirectory;
-    public List<InventoryItem> PlayerInventory {get; private set;}
+    public Dictionary<Item, InventoryItem> PlayerItemDirectory = new Dictionary<Item, InventoryItem>();
+    public List<InventoryItem> PlayerInventory = new List<InventoryItem>();
 
-    public List<InventoryItem> Inventory;
-
-    public KeyCode activationKey = KeyCode.I;
     
     private void Awake()
     {
-        current = this;
         PlayerInventory = new List<InventoryItem>();
         PlayerItemDirectory = new Dictionary<Item, InventoryItem>();
     }
 
-    private void Update()
+    public void InventoryItem (Item refData)
     {
-        Inventory = PlayerInventory;
+         AddItem(refData);
     }
 
-    public InventoryItem Get(Item refData)
-    {
-        if (PlayerItemDirectory.TryGetValue(refData, out InventoryItem value))
-        {
-            return value;
-        }
-        return null;
-    }
-
-    public void Add(Item refData)
+    public void AddItem(Item refData)
     {
         if (PlayerItemDirectory.TryGetValue(refData, out InventoryItem value))
         {
@@ -54,7 +39,7 @@ public class InventorySystem : MonoBehaviour
         Debug.Log("Added: " + refData.Name+" to inventory");
     }
 
-    public void Remove(Item refData)
+    public void RemoveItem(Item refData)
     {
         if (PlayerItemDirectory.TryGetValue(refData, out InventoryItem value))
         {
