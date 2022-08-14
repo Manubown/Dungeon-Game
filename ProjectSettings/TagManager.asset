@@ -9,6 +9,7 @@ TagManager:
   - Skull
   - Wall
   - Item
+  - UIItem
   layers:
   - Default
   - TransparentFX
