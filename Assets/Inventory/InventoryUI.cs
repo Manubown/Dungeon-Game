@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
@@ -18,6 +19,14 @@ public class InventoryUI : MonoBehaviour
 
     public void CreateInventory()
     {
+
+        foreach (var displayedItem in displayedItems)
+        {
+            Destroy(displayedItem.Value);
+        }
+        displayedItems.Clear();
+        
+        
         for (int i = 0; i < inventory.PlayerInventory.Count; i++)
         {
             var obj = Instantiate(inventory.PlayerInventory[i].data.prefab, Vector3.zero,Quaternion.identity, transform);
@@ -25,10 +34,22 @@ public class InventoryUI : MonoBehaviour
             texts[0].text = inventory.PlayerInventory[i].data.Name;
             texts[1].text = inventory.PlayerInventory[i].stackSize.ToString();
             obj.GetComponentInChildren<Image>().sprite = inventory.PlayerInventory[i].data.icon;
+            
             displayedItems.Add(inventory.PlayerInventory[i], obj);
         }
     }
 
+    public void UpdateInventory()
+    {
+        for (int i = 0; i < inventory.PlayerInventory.Count; i++)
+        {
+            if (displayedItems.ContainsKey(inventory.PlayerInventory[i]))
+            {
+                
+            }
+        }
+    }
+    
     // Update is called once per frame
     void Update()
     {

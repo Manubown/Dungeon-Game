@@ -40,6 +40,10 @@ public class PlayerInventorySystem : MonoBehaviour
         if (Input.GetKeyDown(activationKey))
         {
             isActive = !isActive;
+            if (isActive)
+            {
+                inv.GetComponent<InventoryUI>().CreateInventory();
+            }
             inv.SetActive(isActive);
         }
     }
