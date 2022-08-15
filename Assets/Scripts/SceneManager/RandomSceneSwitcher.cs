@@ -18,7 +18,7 @@ public class RandomSceneSwitcher : MonoBehaviour
         {
             int x = Random.Range(0, Scenes.Count);
 
-            SceneManager.LoadScene(Scenes[0]);
+            SceneManager.LoadScene(Scenes[x]);
         }
     }
 
